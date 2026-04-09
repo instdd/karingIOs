@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        // GitHub Pages показывает 404.html для несуществующих путей.
+        // Извлекаем ссылку из пути и перенаправляем на index.html с query-параметром.
+        var path = window.location.pathname;
+        var repoBase = '/karingAndroid/';
+        var idx = path.indexOf(repoBase);
+        if (idx !== -1) {
+            var linkPart = path.substring(idx + repoBase.length);
+            if (linkPart && linkPart.match(/^https?/)) {
+                window.location.replace(
+                    repoBase + '?link=' + encodeURIComponent(linkPart)
+                );
+            }
+        }
+    </script>
+</head>
+<body></body>
+</html>
