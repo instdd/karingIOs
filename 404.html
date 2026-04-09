@@ -6,7 +6,7 @@
         // GitHub Pages показывает 404.html для несуществующих путей.
         // Извлекаем ссылку из пути и перенаправляем на index.html с query-параметром.
         var path = window.location.pathname;
-        var repoBase = '/karingAndroid/';
+        var repoBase = '/karingIOs/';
         var idx = path.indexOf(repoBase);
         if (idx !== -1) {
             var linkPart = path.substring(idx + repoBase.length);
